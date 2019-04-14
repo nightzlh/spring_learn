@@ -1,3 +1,13 @@
+Using the ServletContext object, a servlet can log events, obtain URL references to resources,and set and store attributes that other servlets in the context can access.
+
+
+A ServletContext is rooted at a known path within a Web server. For example, a
+servlet context could be located at http://example.com/catalog . All requests that
+begin with the /catalog request path, known as the context path, are routed to the
+Web application associated with the ServletContext .
+
+url 关联servletContext 关联Webapplication
+
 charpter 10
 	Except for static resources and JSPs packaged in the META- INF/resources of a JAR file that resides in the WEB-INF/lib directory, no other files contained in the WEB-INF directory may be served directly to a client by the container.
 	When packaged into such a form, a META-INF directory will be present which contains information useful to Java archive tools. This directory must not be directly served as content by the container in response to a Web client’s request, though its contents are visible to servlet code via the getResource and getResourceAsStream calls on the ServletContext. Also, any requests to access the resources in META-INF directory must be returned with a SC_NOT_FOUND(404) response	
