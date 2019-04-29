@@ -1,0 +1,17 @@
+charpter 10
+	Except for static resources and JSPs packaged in the META- INF/resources of a JAR file that resides in the WEB-INF/lib directory, no other files contained in the WEB-INF directory may be served directly to a client by the container.
+	When packaged into such a form, a META-INF directory will be present which contains information useful to Java archive tools. This directory must not be directly served as content by the container in response to a Web client’s request, though its contents are visible to servlet code via the getResource and getResourceAsStream calls on the ServletContext. Also, any requests to access the resources in META-INF directory must be returned with a SC_NOT_FOUND(404) response	
+
+chapter 13
+	Web application selected must have the longest context path that matches the start of the request URL. The matched part of the URL is the context path when mapping to servlets.	
+	The path used for mapping to a servlet is the request URL from the request object minus the context path and the path parameters. The URL path mapping rules below are used in order. The first successful match is used with no further matches attempted:
+	The container will try to find an exact match of the path of the request to the path of the servlet. A successful match selects the servlet.
+	The container will recursively try to match the longest path-prefix. This is done by stepping down the path tree a directory at a time, using the ’/’ character as a path separator. The longest match determines the servlet selected.
+	If the last segment in the URL path contains an extension (e.g. .jsp), the servlet container will try to match a servlet that handles requests for the extension. An extension is defined as the part of the last segment after the last ’.’ character.
+	If neither of the previous three rules result in a servlet match, the container will attempt to serve content appropriate for the resource requested. If a "default" servlet is defined for the application, it will be used. Many containers provide an implicit default servlet for serving content.
+	
+	
+
+charpter 14
+	web.xml The deployment descriptor conveys the elements and configuration information of a Web application between Application Developers, Application Assemblers, and Deployers.. 
+
